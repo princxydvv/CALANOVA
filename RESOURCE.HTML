@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - Search & Study</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #6c63ff;
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+
+        .search-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-container h1 {
+            margin-bottom: 1rem;
+        }
+
+        .search-container input[type="text"] {
+            width: calc(100% - 120px);
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-right: 8px;
+        }
+
+        .search-container button {
+            padding: 0.5rem 1rem;
+            border: none;
+            background-color: #6c63ff;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .search-container button:hover {
+            background-color: #6c63ff;
+        }
+
+        .results-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .results-container h2 {
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Resources</h1>
+        <p>Search for topics to study or research effortlessly!</p>
+    </header>
+    <main>
+        <div class="search-container">
+            <h1>Search Resources</h1>
+            <form action="/search" method="get">
+                <input type="text" name="query" placeholder="Enter a topic..." required>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        <div class="results-container">
+            <h2>Search Results</h2>
+            <p>No results found. Use the search bar above to find what you need!</p>
+        </div>
+    </main>
+</body>
+<link rel="stylesheet" href="resource.js">
+
+</html>

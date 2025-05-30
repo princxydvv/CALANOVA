@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendar App</title>
+  <link rel="stylesheet" href="stylescalender.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+</head>
+
+<body>
+  <div class="app-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <button class="btn btn-primary create-event-btn">
+          <span class="icon">+</span>
+          Create
+        </button>
+      </div>
+
+      <div class="mini-calendar-container">
+        <div class="mini-calendar-header">
+          <button class="btn btn-icon" id="mini-prev-month">
+            <span class="icon">&#10094;</span>
+          </button>
+          <span id="mini-calendar-title">Month Year</span>
+          <button class="btn btn-icon" id="mini-next-month">
+            <span class="icon">&#10095;</span>
+          </button>
+        </div>
+        <div class="mini-calendar-weekdays">
+          <div>S</div>
+          <div>M</div>
+          <div>T</div>
+          <div>W</div>
+          <div>T</div>
+          <div>F</div>
+          <div>S</div>
+        </div>
+        <div class="mini-calendar-days" id="mini-calendar-days"></div>
+      </div>
+
+      <div class="calendar-legend">
+        <h3>My calendars</h3>
+        <div class="legend-items">
+          <div class="legend-item">
+            <div class="color-dot" style="background-color: #4285F4;"></div>
+            <input type="checkbox" id="personal-calendar" checked>
+            <label for="personal-calendar">Personal</label>
+          </div>
+          <div class="legend-item">
+            <div class="color-dot" style="background-color: #0F9D58;"></div>
+            <input type="checkbox" id="work-calendar" checked>
+            <label for="work-calendar">Work</label>
+          </div>
+          <div class="legend-item">
+            <div class="color-dot" style="background-color: #DB4437;"></div>
+            <input type="checkbox" id="family-calendar" checked>
+            <label for="family-calendar">Family</label>
+          </div>
+          <div class="legend-item">
+            <div class="color-dot" style="background-color: #F4B400;"></div>
+            <input type="checkbox" id="holiday-calendar" checked>
+            <label for="holiday-calendar">Holidays</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Calendar Header -->
+      <div class="calendar-header">
+        <div class="header-left">
+          <button class="btn btn-outline" id="today-btn">Today</button>
+          <div class="nav-buttons">
+            <button class="btn btn-icon" id="prev-btn">
+              <span class="icon">&#10094;</span>
+            </button>
+            <button class="btn btn-icon" id="next-btn">
+              <span class="icon">&#10095;</span>
+            </button>
+          </div>
+          <h2 id="current-date">Month Year</h2>
+        </div>
+        <div class="header-right">
+          <div class="view-selector">
+            <button class="btn btn-outline" id="view-selector-btn">
+              <span class="icon">📅</span>
+              <span id="current-view">Month</span>
+            </button>
+            <div class="view-dropdown" id="view-dropdown">
+              <div class="dropdown-item" data-view="day">Day</div>
+              <div class="dropdown-item" data-view="week">Week</div>
+              <div class="dropdown-item" data-view="month">Month</div>
+            </div>
+          </div>
+          <button class="btn btn-icon" id="theme-toggle">
+            <span class="icon" id="theme-icon">🌙</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Calendar Views -->
+      <div class="calendar-container">
+        <!-- Month View -->
+        <div class="calendar-view month-view" id="month-view">
+          <div class="month-grid-header">
+            <div>Sunday</div>
+            <div>Monday</div>
+            <div>Tuesday</div>
+            <div>Wednesday</div>
+            <div>Thursday</div>
+            <div>Friday</div>
+            <div>Saturday</div>
+          </div>
+          <div class="month-grid" id="month-grid"></div>
+        </div>
+
+        <!-- Week View -->
+        <div class="calendar-view week-view" id="week-view">
+          <div class="week-header" id="week-header"></div>
+          <div class="week-grid" id="week-grid"></div>
+        </div>
+
+        <!-- Day View -->
+        <div class="calendar-view day-view" id="day-view">
+          <div class="day-header" id="day-header"></div>
+          <div class="day-grid" id="day-grid"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Event Modal -->
+  <div class="modal" id="event-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modal-title">Create Event</h3>
+        <button class="close-btn" id="close-modal">&times;</button>
+      </div>
+      <form id="event-form">
+        <div class="form-group">
+          <label for="event-title">Title</label>
+          <input type="text" id="event-title" required>
+        </div>
+
+        <div class="form-group">
+          <label for="event-description">Description</label>
+          <textarea id="event-description" rows="3"></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="event-start-date">Start Date</label>
+            <input type="date" id="event-start-date" required>
+          </div>
+          <div class="form-group">
+            <label for="event-start-time">Start Time</label>
+            <input type="time" id="event-start-time" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="event-end-date">End Date</label>
+            <input type="date" id="event-end-date" required>
+          </div>
+          <div class="form-group">
+            <label for="event-end-time">End Time</label>
+            <input type="time" id="event-end-time" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Color</label>
+          <div class="color-selector">
+            <button type="button" class="color-option" data-color="#4285F4" style="background-color: #4285F4;"></button>
+            <button type="button" class="color-option" data-color="#0F9D58" style="background-color: #0F9D58;"></button>
+            <button type="button" class="color-option" data-color="#DB4437" style="background-color: #DB4437;"></button>
+            <button type="button" class="color-option" data-color="#F4B400" style="background-color: #F4B400;"></button>
+            <button type="button" class="color-option" data-color="#9C27B0" style="background-color: #9C27B0;"></button>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="btn btn-outline" id="cancel-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="save-btn">Create</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Event Context Menu -->
+  <div class="context-menu" id="event-context-menu">
+    <div class="context-menu-item" id="edit-event">Edit</div>
+    <div class="context-menu-item delete-item" id="delete-event">Delete</div>
+  </div>
+
+  <script src="scriptcalender.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 400px;
+    text-align: center;
+}
+
+.form-container {
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #fff;
+    background-color: #6c63ff;
+    padding: 20px;
+    border-radius: 8px 8px 0 0;
+    margin: -20px -20px 20px -20px;
+}
+
+p {
+    margin: 10px 0;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.button-link {
+    text-decoration: none;
+    /* Remove underline */
+}
+
+.sign-up-btn {
+    background-color: #6c63ff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.sign-up-btn:hover {
+    background-color: #5753d9;
+}
+
+.login-link {
+    margin-top: 20px;
+}
+
+.login-link a {
+    color: #6c63ff;
+    text-decoration: none;
+}
+
+.terms {
+    font-size: 12px;
+    color: #777;
+}
+
+.terms a {
+    color: #6c63ff;
+    text-decoration: none;
+}
