@@ -6,4 +6,4 @@ It is a  smart intuitive platform designed to simplify task management and strea
 Features include personalized task recommendations, productivity analytics, priority setting, and real-time updates based on user behavior. With easy integration across devices, it serves as a centralized hub for organizing work, life, and everything in between. 
 The AI adapts over time to improve efficiency, making planning smarter, faster, and more human-centric.
 
- I am still working for more addons feature for this app.
+ I am still working for more addons feature for this website.
